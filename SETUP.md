@@ -78,6 +78,8 @@ The schema, registered model, serving endpoint, Genie space, and Lakebase projec
 | Symptom | Likely cause | Fix |
 |---|---|---|
 | Validate asks for `warehouse_id` | Required variable | Pass `--var warehouse_id=...` |
+| Deploy 409 `An app with the same name already exists` | Name already used in the workspace | Pass `--var app_name=<new-name>` or `databricks bundle deployment bind gpo_app <existing-name>` |
 | App build fails on `DESCRIBE QUERY` | App SP cannot read the schema | Grant catalog/schema/select to the app client ID |
 | Validate task fails on Genie | Empty or wrong `genie_space_id` | Create the space on the Gold views, then rerun |
 | Serving task hangs or fails | Endpoint name collision or quota | Override `endpoint` |
+| Ingest fails: table already managed by another pipeline | Schema already has Lakeflow-owned bronze/silver tables | Use a fresh `--var schema=<new_schema>` |

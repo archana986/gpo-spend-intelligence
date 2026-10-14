@@ -11,3 +11,6 @@ resources:
       configuration:
         gpo.catalog: ${var.catalog}
         gpo.schema: ${var.schema}
+      # Development deploys prefix the pipeline name. Existing bronze/silver
+      # tables in a busy schema may already belong to another pipeline. Use a
+      # fresh schema if ingest fails with "already managed by pipeline".
