@@ -1,0 +1,13 @@
+resources:
+  pipelines:
+    gpo_ingest:
+      name: gpo-ingest-${var.schema}
+      catalog: ${var.catalog}
+      schema: ${var.schema}
+      serverless: true
+      libraries:
+        - notebook:
+            path: ../src/pipelines/sdp_gpo_ingest.py
+      configuration:
+        gpo.catalog: ${var.catalog}
+        gpo.schema: ${var.schema}

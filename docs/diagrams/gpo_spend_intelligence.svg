@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#1B3139"/>
+    </marker>
+    <marker id="blueArrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#2272B4"/>
+    </marker>
+    <style>
+      .title{font:700 48px 'DM Sans',Arial,sans-serif;fill:#1B3139}
+      .subtitle{font:400 24px 'DM Sans',Arial,sans-serif;fill:#5A6F77}
+      .section{font:700 26px 'DM Sans',Arial,sans-serif;fill:#1B3139}
+      .step{font:700 22px 'DM Sans',Arial,sans-serif;fill:#fff}
+      .cardTitle{font:700 24px 'DM Sans',Arial,sans-serif;fill:#1B3139}
+      .cardTitleWhite{font:700 24px 'DM Sans',Arial,sans-serif;fill:#fff}
+      .body{font:400 18px 'DM Sans',Arial,sans-serif;fill:#5A6F77}
+      .bodyWhite{font:400 18px 'DM Sans',Arial,sans-serif;fill:#fff}
+      .small{font:400 16px 'DM Sans',Arial,sans-serif;fill:#5A6F77}
+      .smallWhite{font:400 16px 'DM Sans',Arial,sans-serif;fill:#fff}
+      .footer{font:400 18px 'DM Sans',Arial,sans-serif;fill:#5A6F77}
+      .line{fill:none;stroke:#1B3139;stroke-width:4;marker-end:url(#arrow)}
+      .blueLine{fill:none;stroke:#2272B4;stroke-width:4;marker-end:url(#blueArrow)}
+    </style>
+  </defs>
+  <rect width="1920" height="1080" fill="#FFFFFF"/>
+  <rect width="1920" height="12" fill="#FF3621"/>
+  <text x="78" y="92" class="title">GPO spend intelligence</text>
+  <text x="78" y="136" class="subtitle">Synthetic purchase book in. Governed gold, a risk model, and Genie in the middle. One review action out.</text>
+
+  <rect x="58" y="180" width="560" height="790" rx="20" fill="#F8F7F5" stroke="#DDD9D2" stroke-width="2"/>
+  <rect x="644" y="180" width="632" height="790" rx="20" fill="#FFF5F3" stroke="#F5C2BA" stroke-width="2"/>
+  <rect x="1302" y="180" width="560" height="790" rx="20" fill="#EFF9F5" stroke="#A8DCC7" stroke-width="2"/>
+
+  <circle cx="98" cy="226" r="24" fill="#1B3139"/><text x="98" y="234" text-anchor="middle" class="step">1</text>
+  <text x="136" y="235" class="section">GENERATE AND INGEST</text>
+  <circle cx="684" cy="226" r="24" fill="#FF3621"/><text x="684" y="234" text-anchor="middle" class="step">2</text>
+  <text x="722" y="235" class="section">GOVERN AND SCORE</text>
+  <circle cx="1342" cy="226" r="24" fill="#00A972"/><text x="1342" y="234" text-anchor="middle" class="step">3</text>
+  <text x="1380" y="235" class="section">ASK AND ACT</text>
+
+  <rect x="92" y="280" width="492" height="130" rx="12" fill="#FFFFFF" stroke="#9AABB2" stroke-width="2"/>
+  <text x="338" y="330" text-anchor="middle" class="cardTitle">Synthetic generator</text>
+  <text x="338" y="368" text-anchor="middle" class="body">Northwind Health Alliance POs</text>
+
+  <path d="M338 410 L338 455" class="line"/>
+
+  <rect x="92" y="458" width="492" height="130" rx="12" fill="#2272B4"/>
+  <text x="338" y="508" text-anchor="middle" class="cardTitleWhite">Unity Catalog volume</text>
+  <text x="338" y="546" text-anchor="middle" class="bodyWhite">Landing files for Auto Loader</text>
+
+  <path d="M338 588 L338 633" class="line"/>
+
+  <rect x="92" y="636" width="492" height="168" rx="12" fill="#1B3139"/>
+  <text x="338" y="686" text-anchor="middle" class="cardTitleWhite">Lakeflow pipeline</text>
+  <text x="338" y="724" text-anchor="middle" class="bodyWhite">Serverless bronze and silver</text>
+  <text x="338" y="756" text-anchor="middle" class="bodyWhite">Spark Declarative Pipeline</text>
+
+  <text x="338" y="850" text-anchor="middle" class="small">Hash-seeded. Safe to rerun.</text>
+
+  <rect x="678" y="280" width="564" height="130" rx="12" fill="#FFFFFF" stroke="#FF3621" stroke-width="2"/>
+  <text x="960" y="330" text-anchor="middle" class="cardTitle">Governed gold</text>
+  <text x="960" y="368" text-anchor="middle" class="body">KPIs, coverage, maverick lines</text>
+
+  <path d="M960 410 L960 455" class="line"/>
+
+  <rect x="678" y="458" width="270" height="200" rx="12" fill="#FF3621"/>
+  <text x="813" y="520" text-anchor="middle" class="cardTitleWhite">Risk model</text>
+  <text x="813" y="558" text-anchor="middle" class="bodyWhite">MLflow + UC champion</text>
+  <text x="813" y="590" text-anchor="middle" class="bodyWhite">Model Serving</text>
+
+  <rect x="972" y="458" width="270" height="200" rx="12" fill="#2272B4"/>
+  <text x="1107" y="520" text-anchor="middle" class="cardTitleWhite">UC controls</text>
+  <text x="1107" y="558" text-anchor="middle" class="bodyWhite">Mask + row filter</text>
+  <text x="1107" y="590" text-anchor="middle" class="bodyWhite">Lineage on gold</text>
+
+  <path d="M813 658 L813 720" class="line"/>
+  <path d="M1107 658 L1107 720" class="line"/>
+
+  <rect x="678" y="724" width="564" height="130" rx="12" fill="#1B3139"/>
+  <text x="960" y="774" text-anchor="middle" class="cardTitleWhite">Action briefs</text>
+  <text x="960" y="812" text-anchor="middle" class="bodyWhite">Foundation Model on ranked lines</text>
+
+  <path d="M550 720 C590 720 610 345 670 345" class="blueLine"/>
+
+  <rect x="1336" y="280" width="492" height="150" rx="12" fill="#FFFFFF" stroke="#9AABB2" stroke-width="2"/>
+  <text x="1582" y="334" text-anchor="middle" class="cardTitle">Genie</text>
+  <text x="1582" y="372" text-anchor="middle" class="body">Natural language to governed SQL</text>
+
+  <path d="M1582 430 L1582 488" class="line"/>
+
+  <rect x="1336" y="492" width="492" height="168" rx="12" fill="#00A972"/>
+  <text x="1582" y="548" text-anchor="middle" class="cardTitleWhite">Databricks App</text>
+  <text x="1582" y="586" text-anchor="middle" class="bodyWhite">KPIs, review queue, Genie</text>
+  <text x="1582" y="618" text-anchor="middle" class="bodyWhite">Bound SQL warehouse</text>
+
+  <path d="M1582 660 L1582 718" class="line"/>
+
+  <rect x="1336" y="722" width="492" height="150" rx="12" fill="#1B3139"/>
+  <text x="1582" y="776" text-anchor="middle" class="cardTitleWhite">Lakebase write-back</text>
+  <text x="1582" y="814" text-anchor="middle" class="bodyWhite">Analyst review tasks in Postgres</text>
+
+  <path d="M1242 789 C1280 789 1295 576 1328 576" class="blueLine"/>
+
+  <text x="78" y="1024" class="footer">Scope: synthetic Northwind data, not a customer ledger. Generator dollars are not customer savings.</text>
+</svg>

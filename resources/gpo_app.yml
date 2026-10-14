@@ -1,0 +1,49 @@
+resources:
+  apps:
+    gpo_app:
+      name: ${var.app_name}
+      description: Healthcare GPO spend intelligence with governed analytics, Genie, model-ranked review, and Lakebase write-back.
+      source_code_path: ../src/app
+      config:
+        command:
+          - uvicorn
+          - main:app
+          - --host
+          - 0.0.0.0
+          - --port
+          - "8000"
+        env:
+          - name: GPO_CATALOG
+            value: ${var.catalog}
+          - name: GPO_SCHEMA
+            value: ${var.schema}
+          - name: DATABRICKS_WAREHOUSE_ID
+            value: ${var.warehouse_id}
+          - name: GENIE_SPACE_ID
+            value: ${var.genie_space_id}
+          - name: LAKEBASE_PROJECT
+            value: ${var.lakebase_project}
+          - name: LAKEBASE_BRANCH
+            value: ${var.lakebase_branch}
+          - name: LAKEBASE_ENDPOINT
+            value: primary
+          - name: LAKEBASE_SCHEMA
+            value: gpo
+      resources:
+        - name: sql-warehouse
+          sql_warehouse:
+            id: ${var.warehouse_id}
+            permission: CAN_USE
+        - name: genie-space
+          genie_space:
+            name: GPO Spend Intelligence - Analyst Genie
+            permission: CAN_RUN
+            space_id: ${var.genie_space_id}
+        - name: postgres
+          postgres:
+            branch: projects/${var.lakebase_project}/branches/${var.lakebase_branch}
+            database: projects/${var.lakebase_project}/branches/${var.lakebase_branch}/databases/${var.lakebase_database}
+            permission: CAN_CONNECT_AND_CREATE
+      permissions:
+        - level: CAN_USE
+          group_name: users

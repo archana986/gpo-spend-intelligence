@@ -1,0 +1,31 @@
+# secrets / local creds  -  never commit
+.secrets/
+*.env
+
+# python
+__pycache__/
+*.pyc
+
+# Databricks Asset Bundle local state (terraform, sync snapshots, provider binary)
+.databricks/
+
+# generated at runtime by the synthetic-data notebook (recreated on deploy)
+landing/
+
+# local-only status page
+index.html
+
+# OS
+.DS_Store
+
+# working / delivery aids and transcripts  -  not part of the build
+FE-Bar-Deck.pdf
+FE-Bar-Speaker-Notes.html
+FE-Bar-form-answers.html
+FE-Bar-Transcript.md
+FE-Bar-Transcript-REDACTED.md
+FE-Bar-transcript/
+deck-assets/
+validation-screenshots/
+FE_BAR_*.html
+Fe Bar Pass Guide.docx

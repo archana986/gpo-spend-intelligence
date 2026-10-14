@@ -1,0 +1,19 @@
+# Fallback env if the app is started outside the bundle. Bundle resources/gpo_app.yml wins on deploy.
+command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+env:
+  - name: GPO_CATALOG
+    value: main
+  - name: GPO_SCHEMA
+    value: gpo_spend_intelligence
+  - name: DATABRICKS_WAREHOUSE_ID
+    value: ""
+  - name: GENIE_SPACE_ID
+    value: ""
+  - name: LAKEBASE_PROJECT
+    value: ""
+  - name: LAKEBASE_BRANCH
+    value: production
+  - name: LAKEBASE_ENDPOINT
+    value: primary
+  - name: LAKEBASE_SCHEMA
+    value: gpo

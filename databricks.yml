@@ -1,0 +1,53 @@
+# GPO spend intelligence. Synthetic Northwind Health Alliance data only.
+# Pass catalog, warehouse_id, genie_space_id, and lakebase_project at deploy time.
+bundle:
+  name: gpo-spend-intelligence
+
+include:
+  - resources/*.yml
+
+variables:
+  catalog:
+    description: Unity Catalog catalog you can create a schema in
+    default: main
+  schema:
+    description: Schema for synthetic GPO tables and the registered model
+    default: gpo_spend_intelligence
+  warehouse_id:
+    description: SQL warehouse ID used by the app and validation
+  endpoint:
+    description: Model Serving endpoint name
+    default: gpo-maverick-risk
+  llm_endpoint:
+    description: Foundation Model endpoint for action briefs
+    default: databricks-meta-llama-3-3-70b-instruct
+  app_name:
+    description: Databricks App resource name
+    default: gpo-spend-intelligence
+  genie_space_id:
+    description: Existing Genie space ID over the Gold views
+  lakebase_project:
+    description: Existing Lakebase project ID for review write-back
+  lakebase_branch:
+    description: Lakebase branch ID
+    default: production
+  lakebase_database:
+    description: Lakebase database ID
+    default: databricks-postgres
+
+sync:
+  exclude:
+    - "*.md"
+    - "docs/**"
+    - "tests/**"
+
+targets:
+  dev:
+    mode: development
+    default: true
+  prod:
+    mode: production
+    workspace:
+      root_path: /Workspace/Users/${workspace.current_user.userName}/.bundle/${bundle.name}/${bundle.target}
+    run_as:
+      user_name: ${workspace.current_user.userName}

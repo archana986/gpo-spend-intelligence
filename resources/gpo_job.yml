@@ -1,0 +1,70 @@
+resources:
+  jobs:
+    gpo_build:
+      name: gpo-build-${var.schema}
+      # All notebook tasks run on serverless compute (no cluster spec)  -  this
+      # sidesteps the classic single-node num_workers:0 hang and needs no VM quota.
+      tasks:
+        - task_key: generate_data
+          notebook_task:
+            notebook_path: ../src/notebooks/00_generate_synthetic_data.py
+            base_parameters:
+              catalog: ${var.catalog}
+              schema: ${var.schema}
+
+        - task_key: ingest
+          depends_on:
+            - task_key: generate_data
+          pipeline_task:
+            pipeline_id: ${resources.pipelines.gpo_ingest.id}
+
+        - task_key: train_register_serve
+          depends_on:
+            - task_key: ingest
+          notebook_task:
+            notebook_path: ../src/notebooks/train_register_serve.py
+            base_parameters:
+              catalog: ${var.catalog}
+              schema: ${var.schema}
+
+        - task_key: govern_benchmark
+          depends_on:
+            - task_key: train_register_serve
+          notebook_task:
+            notebook_path: ../src/notebooks/02_govern_and_benchmark.py
+            base_parameters:
+              catalog: ${var.catalog}
+              schema: ${var.schema}
+
+        - task_key: generate_action_briefs
+          depends_on:
+            - task_key: govern_benchmark
+          notebook_task:
+            notebook_path: ../src/notebooks/04_generate_action_briefs.py
+            base_parameters:
+              catalog: ${var.catalog}
+              schema: ${var.schema}
+              llm_endpoint: ${var.llm_endpoint}
+              top_n: "25"
+
+        - task_key: deploy_serving
+          depends_on:
+            - task_key: train_register_serve
+          notebook_task:
+            notebook_path: ../src/notebooks/03_deploy_serving.py
+            base_parameters:
+              catalog: ${var.catalog}
+              schema: ${var.schema}
+              endpoint: ${var.endpoint}
+
+        - task_key: validate_build
+          depends_on:
+            - task_key: generate_action_briefs
+            - task_key: deploy_serving
+          notebook_task:
+            notebook_path: ../src/notebooks/05_validate_build.ipynb
+            base_parameters:
+              catalog: ${var.catalog}
+              schema: ${var.schema}
+              endpoint: ${var.endpoint}
+              genie_space_id: ${var.genie_space_id}

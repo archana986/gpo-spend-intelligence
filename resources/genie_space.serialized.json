@@ -1,0 +1,44 @@
+{
+  "version": 2,
+  "data_sources": {
+    "tables": [
+      {
+        "identifier": "main.gpo_spend_intelligence.dim_contracts"
+      },
+      {
+        "identifier": "main.gpo_spend_intelligence.dim_members"
+      },
+      {
+        "identifier": "main.gpo_spend_intelligence.dim_suppliers"
+      },
+      {
+        "identifier": "main.gpo_spend_intelligence.gold_contract_expirations"
+      },
+      {
+        "identifier": "main.gpo_spend_intelligence.gold_coverage_by_category"
+      },
+      {
+        "identifier": "main.gpo_spend_intelligence.gold_kpis"
+      },
+      {
+        "identifier": "main.gpo_spend_intelligence.gold_maverick_risk"
+      },
+      {
+        "identifier": "main.gpo_spend_intelligence.gold_member_maverick"
+      },
+      {
+        "identifier": "main.gpo_spend_intelligence.gold_region_summary"
+      },
+      {
+        "identifier": "main.gpo_spend_intelligence.gold_supplier_scorecard"
+      },
+      {
+        "identifier": "main.gpo_spend_intelligence.ref_categories"
+      },
+      {
+        "identifier": "main.gpo_spend_intelligence.spend_lines"
+      }
+    ]
+  }
+}
+
